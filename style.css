@@ -1,0 +1,140 @@
+:root {
+  --clr-dark: rgb(196, 200, 202);
+  --clr-light: #fff;
+  --clr-black: rgb(0, 0, 0);
+  --clr-red: rgb(226, 13, 13);
+  --clr-accent: rgb(214, 208, 208);
+  --padding-conent: 1.2rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--clr-dark);
+  color: var(--clr-dark);
+  padding-bottom: 14rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+p {
+  color: var(--clr-accent);
+}
+
+.the-buranodoors {
+  position: relative;
+  width: 16rem;
+  height: 22rem;
+  background-image: url(images/buranodoors.jpg);
+  background-size: cover;
+  background-position: center;
+  padding-top: 12.5rem;
+  opacity: 0.85;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  transition: transform 500ms ease;
+}
+
+.the-buranodoors:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.the-buranodoors__like {
+  position: absolute;
+  background: url(images/icon-heart.svg) no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  top: var(--padding-conent);
+  right: var(--padding-conent);
+}
+
+.the-buranodoors__content {
+  padding: var(--padding-conent);
+  position: relative;
+  background: linear-gradient(
+    hsl(0 0% 0% /0),
+    hsl(0 0% 0% /0.2) 10%,
+    hsl(0 0% 0% /1)
+  );
+
+  transition: transform 600ms ease;
+  transform: translateY(56%);
+}
+
+.the-buranodoors:hover .the-buranodoors__content {
+  transform: translateY(0);
+}
+
+.the-buranodoors__title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--clr-light);
+}
+
+.the-buranodoors__location {
+  position: relative;
+  width: max-content;
+  font-size: 0.6rem;
+  padding-bottom: 1.1rem;
+}
+
+.the-buranodoors__views {
+  cursor: pointer;
+  display: inline;
+  position: absolute;
+  top: calc(var(--padding-conent) * 1.2);
+  right: calc(var(--padding-conent) * 4.5);
+  text-decoration: none;
+  color: var(--clr-light);
+  background-color: var(--clr-red);
+  padding: 0em 0.8em;
+  border-radius: 0.8em;
+  border: none;
+  font-size: 0.7rem;
+}
+
+.the-buranodoors__views:hover,
+.the-buranodoors__views:focus {
+  background-color: var(--clr-light);
+  color: var(--clr-black);
+}
+
+.the-buranodoors__description {
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  word-break: break-all;
+  width: 100%;
+}
+
+.the-buranodoors__description::after {
+  content: "";
+  left: var(--padding-conent);
+  top: 4.02rem;
+  position: absolute;
+  height: 0.2rem;
+  width: 86%;
+  background: var(--clr-red);
+  transform: scaleX(1.2);
+  transition: transform 600ms ease;
+}
+
+.the-buranodoors:hover .the-buranodoors__description::after {
+  transform: scaleX(1);
+}
