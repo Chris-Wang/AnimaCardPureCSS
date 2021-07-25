@@ -1,10 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 :root {
   --clr-dark: rgb(196, 200, 202);
   --clr-light: #fff;
   --clr-black: rgb(0, 0, 0);
   --clr-red: rgb(226, 13, 13);
   --clr-accent: rgb(214, 208, 208);
-  --padding-conent: 1.2rem;
+  --clr-lightdark: rgb(24, 25, 26);
+  --clr-sky: rgb(30, 144, 255);
+  --padding-content: 1.2rem;
+  --font-title: 1.1rem;
+  --font-weight: 500;
+  --font-btn: 0.7rem;
+  --font-des: 0.8rem;
+  --font-loc: 0.6rem;
 }
 
 *,
@@ -16,11 +25,16 @@
 body {
   font-family: sans-serif;
   min-height: 100vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
   background: var(--clr-dark);
   color: var(--clr-dark);
-  padding-bottom: 14rem;
+  align-items: center;
+  flex-wrap: wrap;
+  background: url(images/bg.jpg);
+  background-size: cover;
+
+  /* padding-bottom: 14rem; */
 }
 
 h1,
@@ -34,7 +48,12 @@ p {
   color: var(--clr-accent);
 }
 
-.the-buranodoors {
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.buranodoors {
   position: relative;
   width: 16rem;
   height: 22rem;
@@ -42,31 +61,41 @@ p {
   background-size: cover;
   background-position: center;
   padding-top: 12.5rem;
-  opacity: 0.85;
+  opacity: 0.9;
   border-radius: 0.5rem;
   overflow: hidden;
 
   transition: transform 500ms ease;
+  /* box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25); */
+  box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
 }
 
-.the-buranodoors:hover {
+.buranodoors:hover {
   opacity: 1;
   transform: scale(1.05);
 }
 
-.the-buranodoors__like {
+.buranodoors-like {
   position: absolute;
   background: url(images/icon-heart.svg) no-repeat;
   background-size: contain;
   background-position: center;
   width: 1.2rem;
   height: 1.2rem;
-  top: var(--padding-conent);
-  right: var(--padding-conent);
+  top: var(--padding-content);
+  right: var(--padding-content);
+  border: none;
+  cursor: pointer;
 }
 
-.the-buranodoors__content {
-  padding: var(--padding-conent);
+.buranodoors-like:hover,
+.buranodoors-like:focus {
+  filter: invert(27%) sepia(70%) saturate(7472%) hue-rotate(339deg)
+    brightness(86%) contrast(100%);
+}
+
+.buranodoors-content {
+  padding: var(--padding-content);
   position: relative;
   background: linear-gradient(
     hsl(0 0% 0% /0),
@@ -75,66 +104,185 @@ p {
   );
 
   transition: transform 600ms ease;
-  transform: translateY(56%);
+  transform: translateY(53%);
 }
 
-.the-buranodoors:hover .the-buranodoors__content {
+.buranodoors:hover .buranodoors-content {
   transform: translateY(0);
 }
 
-.the-buranodoors__title {
-  font-size: 1.1rem;
-  font-weight: 500;
+.buranodoors-title {
+  font-size: var(--font-title);
+  font-weight: var(--font-weight);
   color: var(--clr-light);
 }
 
-.the-buranodoors__location {
+.buranodoors-location {
   position: relative;
   width: max-content;
-  font-size: 0.6rem;
+  font-size: var(--font-loc);
   padding-bottom: 1.1rem;
 }
 
-.the-buranodoors__views {
+.buranodoors-views {
   cursor: pointer;
   display: inline;
   position: absolute;
-  top: calc(var(--padding-conent) * 1.2);
-  right: calc(var(--padding-conent) * 4.5);
+  top: calc(var(--padding-content) * 1.4);
+  right: calc(var(--padding-content) * 3.7);
   text-decoration: none;
   color: var(--clr-light);
   background-color: var(--clr-red);
-  padding: 0em 0.8em;
-  border-radius: 0.8em;
+  padding: 0rem 0.8rem;
+  border-radius: 0.8rem;
   border: none;
-  font-size: 0.7rem;
+  font-size: var(--font-btn);
 }
 
-.the-buranodoors__views:hover,
-.the-buranodoors__views:focus {
+.buranodoors-views:hover,
+.buranodoors-views:focus {
   background-color: var(--clr-light);
   color: var(--clr-black);
 }
 
-.the-buranodoors__description {
+.buranodoors-description {
   margin-top: 0.3rem;
-  font-size: 0.8rem;
+  font-size: var(--font-des);
   word-break: break-all;
   width: 100%;
 }
 
-.the-buranodoors__description::after {
+.buranodoors-description::after {
   content: "";
-  left: var(--padding-conent);
-  top: 4.02rem;
+  left: var(--padding-content);
+  top: 4.05rem;
   position: absolute;
-  height: 0.2rem;
+  height: 4px;
   width: 86%;
   background: var(--clr-red);
   transform: scaleX(1.2);
   transition: transform 600ms ease;
 }
 
-.the-buranodoors:hover .the-buranodoors__description::after {
+.buranodoors:hover .buranodoors-description::after {
   transform: scaleX(1);
+}
+
+.toledo {
+  position: relative;
+  width: 25rem;
+  height: 14rem;
+  /* height: 20.5rem; */
+  margin: 1rem;
+  opacity: 1;
+  border-radius: 0.5rem;
+  background: var(--clr-light);
+  /* overflow: hidden; */
+
+  transition: transform 600ms ease;
+  /* transition: transform 300ms ease-in-out; */
+  box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+}
+
+.toledo:hover {
+  background-size: 110% 110%;
+}
+
+.toledo-country {
+  position: absolute;
+  cursor: pointer;
+  top: var(--padding-content);
+  right: var(--padding-content);
+  color: var(--clr-light);
+  background-color: var(--clr-sky);
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.2rem;
+  border: none;
+  text-align: center;
+  line-height: 1em;
+  font-size: var(--font-btn);
+}
+
+.toledo-country:hover,
+.toledo-country:focus {
+  background-color: var(--clr-light);
+  color: var(--clr-black);
+}
+
+.toledo-stat {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1.2rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  background: var(--clr-light);
+
+  transition: transform 600ms ease;
+  transform: translateY(-80%);
+}
+
+.toledo:hover .toledo-stat {
+  transform: translateY(0);
+}
+
+.toledo-img {
+  overflow: hidden;
+}
+.toledo-img,
+.toledo-img__load {
+  width: 25rem;
+  height: 14rem;
+  border-radius: 0.5rem;
+  /* z-index: 1; */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 600ms ease;
+}
+
+.toledo:hover .toledo-img__load {
+  transform: scale(1.2, 1.2);
+  border-bottom-left-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+}
+
+.toledo-img__load {
+  object-fit: cover;
+}
+
+.toledo-title {
+  font-size: var(--font-title);
+  font-weight: var(--font-weight);
+  color: var(--clr-black);
+}
+
+.toledo-description {
+  margin-top: 0.3rem;
+  margin-bottom: 0.4rem;
+  font-size: var(--font-des);
+  word-break: break-all;
+  width: 100%;
+  color: var(--clr-lightdark);
+}
+
+.toledo-like {
+  background: url(images/icon-heart.svg) no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 2rem;
+  height: 2rem;
+  margin-left: var(--padding-content);
+  margin-right: calc(var(--padding-content) * 0.2);
+  top: var(--padding-content);
+  right: var(--padding-content);
+  filter: invert(37%) sepia(3%) saturate(17%) hue-rotate(346deg) brightness(94%)
+    contrast(82%);
+  border: none;
+  cursor: pointer;
+}
+
+.toledo-like:hover,
+.toledo-like:focus {
+  filter: invert(27%) sepia(70%) saturate(7472%) hue-rotate(339deg)
+    brightness(86%) contrast(100%);
 }
