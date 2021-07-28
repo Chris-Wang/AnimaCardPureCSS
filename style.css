@@ -27,10 +27,10 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   background: var(--clr-dark);
   color: var(--clr-dark);
-  align-items: center;
-  flex-wrap: wrap;
+
   background: url(images/bg.jpg);
   background-size: cover;
 
@@ -53,6 +53,22 @@ h2 {
   font-weight: 700;
 }
 
+.glass_panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: white;
+  min-height: 90vh;
+  width: 90%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 20px;
+}
+
 .buranodoors {
   position: relative;
   width: 16rem;
@@ -60,7 +76,7 @@ h2 {
   background-image: url(images/buranodoors.jpg);
   background-size: cover;
   background-position: center;
-  padding-top: 12.5rem;
+  padding-top: 11.5rem;
   opacity: 0.9;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -95,41 +111,42 @@ h2 {
 }
 
 .buranodoors-content {
-  padding: var(--padding-content);
+  padding: 1rem 1.2rem 1.2rem 1.2rem;
   position: relative;
   background: linear-gradient(
     hsl(0 0% 0% /0),
     hsl(0 0% 0% /0.2) 10%,
     hsl(0 0% 0% /1)
   );
-
+  height: 11.3rem;
   transition: transform 600ms ease;
-  transform: translateY(53%);
+  transform: translateY(50%);
 }
 
 .buranodoors:hover .buranodoors-content {
-  transform: translateY(0);
+  transform: translateY(-7%);
 }
 
 .buranodoors-title {
   font-size: var(--font-title);
   font-weight: var(--font-weight);
   color: var(--clr-light);
+  margin-bottom: 0.1rem;
 }
 
 .buranodoors-location {
   position: relative;
   width: max-content;
   font-size: var(--font-loc);
-  padding-bottom: 1.1rem;
+  padding-bottom: 1.5rem;
 }
 
 .buranodoors-views {
   cursor: pointer;
   display: inline;
   position: absolute;
-  top: calc(var(--padding-content) * 1.4);
-  right: calc(var(--padding-content) * 3.7);
+  top: calc(var(--padding-content) * 1.2);
+  right: calc(var(--padding-content) * 3.6);
   text-decoration: none;
   color: var(--clr-light);
   background-color: var(--clr-red);
@@ -146,7 +163,7 @@ h2 {
 }
 
 .buranodoors-description {
-  margin-top: 0.3rem;
+  margin-top: 1rem;
   font-size: var(--font-des);
   word-break: break-all;
   width: 100%;
@@ -155,7 +172,7 @@ h2 {
 .buranodoors-description::after {
   content: "";
   left: var(--padding-content);
-  top: 4.05rem;
+  top: 4.65rem;
   position: absolute;
   height: 4px;
   width: 86%;
@@ -182,10 +199,6 @@ h2 {
   transition: transform 600ms ease;
   /* transition: transform 300ms ease-in-out; */
   box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
-}
-
-.toledo:hover {
-  background-size: 110% 110%;
 }
 
 .toledo-country {
@@ -218,13 +231,23 @@ h2 {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   background: var(--clr-light);
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.3)
+  );
+  backdrop-filter: blur(10px);
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.5); */
+  /* //border: 1px solid rgba(255, 255, 255, 0.5); */
 
   transition: transform 600ms ease;
-  transform: translateY(-80%);
+  transform: translateY(-99%);
 }
 
 .toledo:hover .toledo-stat {
-  transform: translateY(0);
+  transform: translateY(0%);
 }
 
 .toledo-img {
@@ -242,6 +265,9 @@ h2 {
 
 .toledo:hover .toledo-img__load {
   transform: scale(1.2, 1.2);
+}
+
+.toledo:hover .toledo-img {
   border-bottom-left-radius: 0rem;
   border-bottom-right-radius: 0rem;
 }
@@ -253,7 +279,7 @@ h2 {
 .toledo-title {
   font-size: var(--font-title);
   font-weight: var(--font-weight);
-  color: var(--clr-black);
+  color: rgb(34, 83, 242);
 }
 
 .toledo-description {
@@ -285,4 +311,121 @@ h2 {
 .toledo-like:focus {
   filter: invert(27%) sepia(70%) saturate(7472%) hue-rotate(339deg)
     brightness(86%) contrast(100%);
+}
+
+.florence {
+  position: relative;
+  width: 30rem;
+  height: 16.8rem;
+  padding-top: 12rem;
+  /* height: 20.5rem; */
+  margin: 1rem;
+  opacity: 1;
+  border-radius: 0.5rem;
+
+  /* overflow: hidden; */
+
+  background: url(images/florence.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  transition: transform 600ms ease;
+  /* transition: transform 300ms ease-in-out; */
+  box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+}
+
+.florence-country {
+  position: absolute;
+  cursor: pointer;
+  top: var(--padding-content);
+  right: var(--padding-content);
+  background-color: var(--clr-light);
+  color: var(--clr-black);
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.2rem;
+  border: none;
+  text-align: center;
+  line-height: 1em;
+  font-size: var(--font-btn);
+}
+
+.florence-country:hover,
+.florence-country:focus {
+  color: var(--clr-light);
+  background-color: var(--clr-sky);
+}
+
+.florence-stat {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem 1.2rem;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.3)
+  );
+  backdrop-filter: blur(8px);
+  border-top: 0.5px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.5); */
+  /* //border: 1px solid rgba(255, 255, 255, 0.5); */
+  box-shadow: 0 5px 120px rgba(0, 0, 0, 0.4);
+}
+
+.florence-data {
+  font-size: var(--font-des);
+  margin-top: 0.2rem;
+  /* color: rgb(71, 148, 104); */
+  color: var(--clr-sky);
+}
+
+.florence-title {
+  font-size: calc(var(--font-title) * 1.2);
+  font-weight: var(--font-weight);
+  color: var(--clr-light);
+}
+
+.florence-more {
+  cursor: pointer;
+  color: var(--clr-light);
+  background-color: var(--clr-sky);
+  padding: 0.45rem 0.85rem;
+  border-radius: 0.8rem;
+  border: none;
+  text-align: center;
+  line-height: 1em;
+  font-size: var(--font-btn);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(to right, rgb(74, 71, 209), rgb(4, 107, 253));
+}
+
+.florence-more:hover,
+.florence-more:focus {
+  background-color: var(--clr-light);
+  color: var(--clr-black);
+}
+
+.florence-back {
+  position: relative;
+  width: 30rem;
+  height: 16.8rem;
+  padding-top: 12rem;
+  /* height: 20.5rem; */
+  margin: 1rem;
+  opacity: 1;
+  border-radius: 0.5rem;
+
+  /* overflow: hidden; */
+
+  background: url(images/florence.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  transition: transform 600ms ease;
+  /* transition: transform 300ms ease-in-out; */
+  box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
 }
