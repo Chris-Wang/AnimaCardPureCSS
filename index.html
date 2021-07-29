@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animated Card</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
   </head>
 
   <body>
@@ -13,7 +13,7 @@
       <section class="card_row">
         <div class="toledo">
           <div class="toledo-img">
-            <img class="toledo-img__load" src="images/Toledo2.jpg" />
+            <img class="toledo-img__load" src="assets/Toledo2.jpg" />
           </div>
           <button class="toledo-country">SPAIN</button>
           <div class="toledo-stat">
@@ -38,12 +38,12 @@
           <div class="florence-back">
             <div class="florence-video">
               <video autoplay muted loop id="florence-video__load">
-                <source src="images/fr-video.mp4" type="video/mp4" />
+                <source src="assets/fr-video.mp4" type="video/mp4" />
               </video>
               <button id="florence-video-btn" onclick="playVideo()">
                 <img
                   id="florence-video-btn__img"
-                  src="images/pause.png"
+                  src="assets/pause.png"
                   alt="play-button"
                 />
               </button>
@@ -84,7 +84,7 @@
             </div>
           </div>
           <div class="venice-img">
-            <img src="images/Venice.png" alt="Venice" />
+            <img src="assets/Venice.png" alt="Venice" />
           </div>
         </div>
       </section>
@@ -97,10 +97,10 @@
       function playVideo() {
         if (videoLoad.paused) {
           videoLoad.play();
-          buttonImg.src = "images/pause.png";
+          buttonImg.src = "assets/pause.png";
         } else {
           videoLoad.pause();
-          buttonImg.src = "images/play.png";
+          buttonImg.src = "assets/play.png";
         }
       }
     </script>
