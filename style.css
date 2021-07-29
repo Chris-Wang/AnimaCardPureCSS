@@ -22,6 +22,29 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(127, 107, 183);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(103, 87, 148);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgb(102, 77, 170);
+  border-radius: 2px;
+}
+
 body {
   font-family: sans-serif;
   min-height: 100vh;
@@ -68,6 +91,7 @@ h2 {
     rgba(255, 255, 255, 0.3)
   );
   border-radius: 20px;
+  /* backdrop-filter: blur(8px); */
 }
 
 .buranodoors {
@@ -320,7 +344,7 @@ h2 {
   perspective: 50rem;
   transition: 0.6s;
   transform-style: preserve-3d;
-
+  margin-right: 3rem;
   position: relative;
 }
 
@@ -492,4 +516,143 @@ h2 {
   height: 100%;
   width: 100%;
   object-fit: contain;
+}
+
+.venice {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-between;
+  width: 34rem;
+  height: 22rem;
+  /* height: 20.5rem; */
+  margin: 1rem;
+  margin-left: 2rem;
+  opacity: 1;
+  border-radius: 0.5rem;
+  background: rgba(251, 250, 250, 0.3);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  /* overflow: hidden; */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 600ms ease;
+  /* transition: transform 300ms ease-in-out; */
+  /* box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5); */
+}
+.venice-stat {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 2rem;
+}
+.venice-img {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  height: 100%;
+}
+
+.venice-country {
+  position: relative;
+}
+
+.venice-country__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  color: var(--clr-light);
+  background-color: var(--clr-sky);
+  padding: 0.45rem 0.85rem;
+  border-radius: 0.8rem;
+  border: none;
+  text-align: center;
+  line-height: 1em;
+  font-size: var(--font-btn);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(
+    to right bottom,
+    rgb(109, 95, 220),
+    rgb(248, 112, 193)
+  );
+}
+
+.venice-date {
+  font-size: var(--font-des);
+  margin-top: 1.5rem;
+  /* color: rgb(71, 148, 104); */
+  color: var(--clr-black);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.venice-title {
+  font-size: calc(var(--font-title) * 1.2);
+  font-weight: calc(var(--font-weight) * 1.2);
+  color: var(--clr-black);
+}
+
+.venice-description {
+  margin-top: 0.2rem;
+  height: 13rem;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-des);
+  font-weight: 500;
+  color: var(--clr-black);
+  word-wrap: break-word;
+  overflow-y: scroll;
+}
+
+.venice-more {
+  margin-top: 0.5rem;
+}
+
+.venice-more a {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  width: 5rem;
+  height: 1rem;
+  margin: 2rem 0;
+  font-size: calc(var(--font-btn) * 1.1);
+  color: rgb(127, 107, 183);
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.venice-more a:hover {
+  color: var(--clr-light);
+}
+
+.venice-more a:before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -15px;
+  width: 0%;
+  height: 110%;
+  background: url(images/view_btn.png) no-repeat;
+  background-size: cover;
+  transform-origin: left;
+  transition: 400ms ease-in;
+}
+
+.venice-more a:hover:before {
+  width: 130%;
+}
+
+.venice-more a span {
+  position: relative;
+  z-index: 1;
+}
+.venice-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 400ms ease-in-out;
+}
+
+.venice-img img:hover {
+  transform: scale(1.2);
 }
