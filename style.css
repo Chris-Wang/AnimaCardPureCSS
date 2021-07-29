@@ -8,9 +8,11 @@
   --clr-accent: rgb(214, 208, 208);
   --clr-lightdark: rgb(24, 25, 26);
   --clr-sky: rgb(30, 144, 255);
+  --clr-ocean: rgb(34, 83, 242);
   --padding-content: 1.2rem;
   --font-title: 1.1rem;
   --font-weight: 500;
+  --font-weight-title: 700;
   --font-btn: 0.7rem;
   --font-des: 0.8rem;
   --font-loc: 0.6rem;
@@ -56,8 +58,6 @@ body {
 
   background: url(images/bg.jpg);
   background-size: cover;
-
-  /* padding-bottom: 14rem; */
 }
 
 h1,
@@ -74,7 +74,7 @@ p {
 
 h2 {
   font-family: "Poppins", sans-serif;
-  font-weight: 700;
+  font-weight: var(--font-weight-title);
 }
 
 .glass_panel {
@@ -82,7 +82,7 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background: white;
+  flex-direction: column;
   min-height: 90vh;
   width: 90%;
   background: linear-gradient(
@@ -91,7 +91,13 @@ h2 {
     rgba(255, 255, 255, 0.3)
   );
   border-radius: 20px;
-  /* backdrop-filter: blur(8px); */
+}
+
+.card_row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 
 .buranodoors {
@@ -105,10 +111,8 @@ h2 {
   opacity: 0.9;
   border-radius: 0.5rem;
   overflow: hidden;
-
-  transition: transform 500ms ease;
-  /* box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25); */
   box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+  transition: transform 500ms ease;
 }
 
 .buranodoors:hover {
@@ -189,17 +193,17 @@ h2 {
 
 .buranodoors-description {
   margin-top: 1rem;
+  width: 100%;
   font-size: var(--font-des);
   word-break: break-all;
-  width: 100%;
 }
 
 .buranodoors-description::after {
   content: "";
   left: var(--padding-content);
-  top: 4.65rem;
+  top: calc(var(--padding-content) * 3.9);
   position: absolute;
-  height: 4px;
+  height: 0.25rem;
   width: 86%;
   background: var(--clr-red);
   transform: scaleX(1.2);
@@ -214,15 +218,11 @@ h2 {
   position: relative;
   width: 25rem;
   height: 14rem;
-  /* height: 20.5rem; */
   margin: 1rem;
-  opacity: 1;
+  margin-bottom: 3rem;
   border-radius: 0.5rem;
   background: var(--clr-light);
-  /* overflow: hidden; */
-
   transition: transform 600ms ease;
-  /* transition: transform 300ms ease-in-out; */
   box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
 }
 
@@ -237,7 +237,7 @@ h2 {
   border-radius: 0.2rem;
   border: none;
   text-align: center;
-  line-height: 1em;
+  line-height: 1rem;
   font-size: var(--font-btn);
 }
 
@@ -262,11 +262,6 @@ h2 {
     rgba(255, 255, 255, 0.3)
   );
   backdrop-filter: blur(10px);
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  border-left: 1px solid rgba(255, 255, 255, 0.5);
-  border-right: 1px solid rgba(255, 255, 255, 0.5); */
-  /* //border: 1px solid rgba(255, 255, 255, 0.5); */
-
   transition: transform 600ms ease;
   transform: translateY(-99%);
 }
@@ -278,14 +273,14 @@ h2 {
 .toledo-img {
   overflow: hidden;
 }
+
 .toledo-img,
 .toledo-img__load {
   width: 25rem;
   height: 14rem;
   border-radius: 0.5rem;
-  /* z-index: 1; */
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-  transition: transform 600ms ease;
+  transition: 600ms ease;
 }
 
 .toledo:hover .toledo-img__load {
@@ -304,7 +299,7 @@ h2 {
 .toledo-title {
   font-size: var(--font-title);
   font-weight: var(--font-weight);
-  color: rgb(34, 83, 242);
+  color: var(--clr-ocean);
 }
 
 .toledo-description {
@@ -342,20 +337,11 @@ h2 {
   width: 30rem;
   height: 16.8rem;
   perspective: 50rem;
-  transition: 0.6s;
+  transition: 600ms ease;
   transform-style: preserve-3d;
   margin-right: 3rem;
   position: relative;
 }
-
-/* .florence:hover {
-  transform: rotateY(180deg);
-} */
-
-/* .florence .florence-back {
-  transform: rotateY(180deg);
-} */
-/* 1st step: make the face-back to face-front. because the face-back in the html tree is under face front, so it appears on the the top of face-front. However, we want the face-front to be presented to users by default */
 
 .florence:hover .florence-front {
   transform: rotateY(180deg);
@@ -376,21 +362,14 @@ h2 {
 .florence-front {
   width: 30rem;
   height: 16.8rem;
-  padding-top: 12rem;
-  /* height: 20.5rem; */
+  padding-top: calc(var(--padding-content) * 10);
   margin: 1rem;
-  opacity: 1;
   border-radius: 0.5rem;
   z-index: 2;
-
-  /* overflow: hidden; */
-
   background: url(images/florence.jpg) no-repeat;
   background-size: cover;
   background-position: center;
-
-  transition: transform 600ms ease;
-  /* transition: transform 300ms ease-in-out; */
+  transition: 600ms ease;
   box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
 }
 
@@ -405,7 +384,7 @@ h2 {
   border-radius: 0.2rem;
   border: none;
   text-align: center;
-  line-height: 1em;
+  line-height: 1rem;
   font-size: var(--font-btn);
 }
 
@@ -429,17 +408,12 @@ h2 {
   backdrop-filter: blur(8px);
   border-top: 0.5px solid rgba(255, 255, 255, 0.2);
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  border-left: 1px solid rgba(255, 255, 255, 0.5);
-  border-right: 1px solid rgba(255, 255, 255, 0.5); */
-  /* //border: 1px solid rgba(255, 255, 255, 0.5); */
   box-shadow: 0 5px 120px rgba(0, 0, 0, 0.4);
 }
 
 .florence-data {
   font-size: var(--font-des);
   margin-top: 0.2rem;
-  /* color: rgb(71, 148, 104); */
   color: var(--clr-sky);
 }
 
@@ -457,7 +431,7 @@ h2 {
   border-radius: 0.8rem;
   border: none;
   text-align: center;
-  line-height: 1em;
+  line-height: 1rem;
   font-size: var(--font-btn);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
   background: linear-gradient(to right, rgb(74, 71, 209), rgb(4, 107, 253));
@@ -473,15 +447,11 @@ h2 {
   width: 30rem;
   height: 16.8rem;
   padding-top: 12rem;
-  /* height: 20.5rem; */
   margin: 1rem;
-  opacity: 1;
   border-radius: 0.5rem;
 
-  /* overflow: hidden; */
   transform: rotateY(180deg);
   transition: transform 600ms ease;
-  /* transition: transform 300ms ease-in-out; */
   box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
 }
 
@@ -525,27 +495,23 @@ h2 {
   justify-content: space-between;
   width: 34rem;
   height: 22rem;
-  /* height: 20.5rem; */
   margin: 1rem;
   margin-left: 2rem;
-  opacity: 1;
   border-radius: 0.5rem;
   background: rgba(251, 250, 250, 0.3);
   backdrop-filter: blur(12px);
 
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  /* overflow: hidden; */
   border: 1px solid rgba(255, 255, 255, 0.18);
-  transition: transform 600ms ease;
-  /* transition: transform 300ms ease-in-out; */
-  /* box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5); */
 }
+
 .venice-stat {
   display: flex;
   flex-direction: column;
   width: 60%;
-  padding: 2rem;
+  padding: calc(var(--padding-content) * 1.6);
 }
+
 .venice-img {
   position: relative;
   display: flex;
@@ -569,7 +535,7 @@ h2 {
   border-radius: 0.8rem;
   border: none;
   text-align: center;
-  line-height: 1em;
+  line-height: 1rem;
   font-size: var(--font-btn);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
   background: linear-gradient(
@@ -582,10 +548,9 @@ h2 {
 .venice-date {
   font-size: var(--font-des);
   margin-top: 1.5rem;
-  /* color: rgb(71, 148, 104); */
   color: var(--clr-black);
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: var(--font-weight);
 }
 
 .venice-title {
@@ -599,7 +564,7 @@ h2 {
   height: 13rem;
   font-family: "Poppins", sans-serif;
   font-size: var(--font-des);
-  font-weight: 500;
+  font-weight: var(--font-weight);
   color: var(--clr-black);
   word-wrap: break-word;
   overflow-y: scroll;
@@ -618,7 +583,7 @@ h2 {
   font-size: calc(var(--font-btn) * 1.1);
   color: rgb(127, 107, 183);
   text-decoration: none;
-  transition: 0.5s;
+  transition: 500ms ease-in-out;
 }
 
 .venice-more a:hover {
@@ -628,8 +593,8 @@ h2 {
 .venice-more a:before {
   content: "";
   position: absolute;
-  top: -2px;
-  left: -15px;
+  top: -0.12rem;
+  left: -1rem;
   width: 0%;
   height: 110%;
   background: url(images/view_btn.png) no-repeat;
