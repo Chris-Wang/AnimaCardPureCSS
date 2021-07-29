@@ -37,19 +37,46 @@
         </div>
       </div>
       <div class="florence">
-        <button class="florence-country">ITALY</button>
-        <div class="florence-stat">
-          <div class="florence-content">
-            <p class="florence-data">November 2017</p>
-            <h2 class="florence-title">Florence, Italy</h2>
+        <div class="florence-front">
+          <button class="florence-country">ITALY</button>
+          <div class="florence-stat">
+            <div class="florence-content">
+              <p class="florence-data">November 2017</p>
+              <h2 class="florence-title">Florence, Italy</h2>
+            </div>
+            <button class="florence-more">View Trip</button>
           </div>
-          <button class="florence-more">View Trip</button>
         </div>
-      </div>
-      <div class="florence-back">
-        <button class="florence-country">ITALY</button>
+        <div class="florence-back">
+          <div class="florence-video">
+            <video autoplay muted loop id="florence-video__load">
+              <source src="images/fr-video.mp4" type="video/mp4" />
+            </video>
+            <button id="florence-video-btn" onclick="playVideo()">
+              <img
+                id="florence-video-btn__img"
+                src="images/pause.png"
+                alt="play-button"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </div>
+
+    <script>
+      var videoLoad = document.getElementById("florence-video__load");
+      var videoBtn = document.getElementById("florence-video-btn");
+      var buttonImg = document.getElementById("florence-video-btn__img");
+      function playVideo() {
+        if (videoLoad.paused) {
+          videoLoad.play();
+          buttonImg.src = "images/pause.png";
+        } else {
+          videoLoad.pause();
+          buttonImg.src = "images/play.png";
+        }
+      }
+    </script>
   </body>
 </html>
