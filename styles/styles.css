@@ -68,7 +68,8 @@ h2 {
   flex-wrap: wrap;
   flex-direction: column;
   min-height: 90vh;
-  width: 65%;
+  min-width: 40rem;
+  padding: 2rem 2rem 0 3rem;
   background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
   border-radius: 20px;
   box-shadow: 3px 8px 108px 0 rgba(31, 38, 135, 0.37);
@@ -81,6 +82,11 @@ h2 {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 2rem;
+}
+@media screen and (max-width: 940px) {
+  .card_row {
+    width: 37rem;
+  }
 }
 
 .buranodoors {
